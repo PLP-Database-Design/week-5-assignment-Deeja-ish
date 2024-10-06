@@ -33,8 +33,8 @@ app.get('/patients', (err, results) => {
 
 // question 2 
 app.get('/provider', (err, results) => {
-    const patients = 'SELECT first_name, last_name, provider_specialty FROM providers'
-    db.connect(patients, (req, res) => {
+    const provider = 'SELECT first_name, last_name, provider_specialty FROM providers'
+    db.connect(provider, (req, res) => {
         if (err){
             return res.status(500).send('Failed to get providers information', err)      
           }
@@ -44,8 +44,8 @@ app.get('/provider', (err, results) => {
 
 // question 3 
 app.get('/patients2', (err, results) => {
-    const patients = 'SELECT * FROM patients ORDER BY first_name;'
-    db.connect(patients, (req, res) => {
+    const patients2 = 'SELECT * FROM patients ORDER BY first_name;'
+    db.connect(patients2, (req, res) => {
         if (err){
             return res.status(500).send('Failed to get patients information', err)      
           }
@@ -56,8 +56,8 @@ app.get('/patients2', (err, results) => {
 
 // question 4 
 app.get('/provider2', (err, results) => {
-    const patients = 'SELECT * FROM providers ORDER BY provider_specialty'
-    db.connect(patients, (req, res) => {
+    const provider2= 'SELECT * FROM providers ORDER BY provider_specialty'
+    db.connect(provider2, (req, res) => {
         if (err){
             return res.status(500).send('Failed to get providers information', err)      
           }
