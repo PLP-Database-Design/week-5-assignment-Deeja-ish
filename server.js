@@ -3,6 +3,8 @@ const app = express();
 const dotenv = require('dotenv');
 const mysql = require('mysql2');
 
+dotenv.config();
+
 const db = mysql.createConnection ({
    user : process.env.DB_USERNAME,
     host : process.env.DB_HOST,
@@ -10,7 +12,7 @@ const db = mysql.createConnection ({
     password : process.env.DB_PASSWORD,
 });
 
-dotenv.config();
+
 //connecting to database
 db.connect((err) => {
     if(err){
@@ -64,6 +66,6 @@ app.get('/provider2', (err, results) => {
           res.status(200).send(results)
     }) 
 });     
-app.listen(3300,() =>{
-        console.log('Server is running on port 3300.......')
+app.listen(4500,() =>{
+        console.log('Server is running on port 4500.......')
 });
